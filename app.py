@@ -15,10 +15,10 @@ class HelloWorld(Resource):
     @cross_origin(support_credentials=True)
     def helloWorld():
         data = request.get_json()
-        profilePic = data.get('profile pic', '')
-        usernameLength = data.get('nums/length username', '')
-        processedFullname = data.get('fullname words', '')
-        fullnameLength = data.get("nums/length fullname", '')
+        isAvailableProfilePic = data.get('isAvailableProfilePic', '')
+        usernameLength = data.get('usernameLength', '')
+        processedFullname = data.get('processedFullname', '')
+        fullnameLength = data.get("fullnameLength", '')
 
         print(profilePic)
         print(usernameLength)
