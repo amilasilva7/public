@@ -20,13 +20,13 @@ class HelloWorld(Resource):
         processedFullname = data.get('processedFullname', '')
         fullnameLength = data.get("fullnameLength", '')
 
-        print(profilePic)
+        print(isAvailableProfilePic)
         print(usernameLength)
         print(processedFullname)
         print(fullnameLength)
 
         executable_model = pickle.load( open('genuneProfile.h5', 'rb'))
-        newData = [[profilePic, usernameLength, processedFullname, fullnameLength]]
+        newData = [[isAvailableProfilePic, usernameLength, processedFullname, fullnameLength]]
         inputDataSet = pd.DataFrame(newData, columns=['profile pic', 'nums/length username', 'fullname words', 'nums/length fullname'])
         isFake = executable_model.predict(inputDataSet)
         print(isFake)
